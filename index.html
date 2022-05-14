@@ -1,0 +1,14 @@
+<body>
+  <div>
+    <p class="test">infinite loop test</p>
+  </div>
+</body>
+<script>
+  Array.from = (c) => {if(!c){return[]}if("toArray" in Object(c)){return c.toArray()}var b=c.length||0,a=new Array(b);while(b--){a[b]=c[b]}return a}
+</script>
+<script src="node_modules/css-selector-generator/build/index.js"></script>
+<script>
+  const el = document.querySelector(".test");
+	const selector = CssSelectorGenerator.getCssSelector(el);
+  console.log("selector : ", selector);
+</script>
